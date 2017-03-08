@@ -61,6 +61,7 @@ def main_view(request):
 
     done_keys_keys_33 = keys_33 (done_keys_keys, 33)
 
+
     return render_to_response('articles.html',{'set_keys_keys' : set_keys,
                                                'what_replace_keys':what_replace_keys,
                                                'on_what_replace_keys':on_what_replace_keys,
