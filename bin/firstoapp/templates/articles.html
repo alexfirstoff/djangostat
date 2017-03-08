@@ -1,0 +1,70 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стена</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/foundation.css" %}">
+
+</head>
+<body>
+
+    <form action="" method="post">
+        <div class="row">
+            <div class="small-2 columns">Безусловная замена. Что:</div>
+            <div class="small-2 columns">На что:</div>
+            <div class="small-2 columns">Если больше 33. Что:</div>
+            <div class="small-2 columns">На что:</div>
+             <div class="small-2 columns">Если короче</div>
+            <div class="small-2 columns">Настройки</div>
+        </div>
+        <div class="row">
+                 <div class="small-2 columns">
+                    <textarea name="what_replace" cols="40" rows="15">{{ what_replace_keys }}</textarea>
+                 </div>
+                <div class="small-2 columns">
+                    <textarea name="on_what_replace" cols="40" rows="15">{{ on_what_replace_keys }}</textarea>
+                 </div>
+                <div class="small-2 columns">
+                    <textarea name="what_replace_33" cols="40" rows="15">{{ what_replace_33_keys }}</textarea>
+                 </div>
+                   <div class="small-2 columns">
+                    <textarea name="on_what_replace_33" cols="40" rows="15">{{ on_what_replace_33_keys }}</textarea>
+                 </div>
+                    <div class="small-2 columns">
+                    <textarea name="what_adds_33" cols="40" rows="15">{{ what_adds_33_keys }}</textarea>
+                 </div>
+                <div class="small-2 columns">
+                    <input type="checkbox" name="ino_cap" value="ino_cap"  {% if ino_cap_check %} checked {% endif %}> Все иностранные с большой<br>
+                    <input type="checkbox" name="av_cap" value="av_cap"> Каждое с большой<br>
+                    <input type="checkbox" name="city_cap" value="city_cap"> Города с большой<br>
+                    <input type="checkbox" name="spec_del" value="spec_del" {% if spec_del_check %} checked {% endif %}> Удалить спецсимволы<br>
+                    <input type="checkbox" name="first_cap" value="first_cap" {% if first_cap_check %} checked {% endif %}> Первое с большой и Удалить пробелы<br>
+                 </div>
+            </div>
+            <div class="row">
+                    <input type="submit" class="button" value="Генерация">
+                </div>
+       <div class="row">
+            <div class="large-4 columns">Исходный {{ len_set }}</div>
+            <div class="large-4 columns">Готовый</div>
+            <div class="large-4 columns">Длиннее 33 {{ len_set_33 }}</div>
+       </div>
+        <div class="row">
+                <div class="large-4 columns">
+                    <textarea name="set_keys" cols="40" rows="15">{{ set_keys_keys }}</textarea>
+                    </div>
+                <div class="large-4 columns">
+                    <textarea name="done_keys" cols="40" rows="15">{{ done_keys_keys }}</textarea>
+                </div>
+            <div class="large-4 columns">
+                    <textarea name="done_keys_33" cols="40" rows="15">{{ done_keys_keys_33 }}</textarea>
+                </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
