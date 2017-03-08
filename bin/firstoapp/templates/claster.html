@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стена</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/foundation.css" %}">
+
+</head>
+<body>
+
+    <form action="" method="post">
+
+            <div class="row">
+                    <input type="submit" class="button" value="Генерация">
+                </div>
+       <div class="row">
+            <div class="large-3 columns">Исходный</div>
+           <div class="large-1 columns">частота</div>
+           <div class="large-3 columns">Словарь</div>
+            <div class="large-2 columns">Ключи</div>
+            <div class="large-3 columns">Группы</div>
+       </div>
+        <div class="row">
+                <div class="large-3 columns">
+                    <textarea name="set_keys" cols="45" rows="100">{{ set_keys }}</textarea>
+                </div>
+                <div class="large-1 columns">
+                    <textarea name="nclik" cols="5" rows="100">{{ nclik }}</textarea>
+                </div>
+
+                <div class="large-3 columns">
+                    <textarea name="chast_keys" cols="45" rows="100">{{ chast_keys }}</textarea>
+                </div>
+                <div class="large-2 columns">
+                    <textarea name="keys_keys" cols="45" rows="100">{{ keys_keys }}</textarea>
+                </div>
+
+                <div class="large-3 columns">
+                    <textarea name="done_keys_keys" cols="45" rows="100">{{ done_keys_keys }}</textarea>
+                </div>
+        </div>
+        <div class="row">
+            <textarea name="group_key" cols="105" rows="50">{{ group_key }}</textarea>
+        </div>
+    </form>
+
+
+</body>
+</html>

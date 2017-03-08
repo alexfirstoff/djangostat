@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 #from article.views import basic_one, basic_two, basic_3, articles, addlike, article
-from article.views import main_view
+from article.views import main_view, main_view_claster
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', main_view),
+    url(r'^claster/', main_view_claster),
+
+    url(r'^', main_view)
 
 
     #url(r'^basicview/1', basic_one),

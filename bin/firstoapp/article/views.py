@@ -7,9 +7,33 @@ from article.models import Article
 from django.core.exceptions import ObjectDoesNotExist
 from article.forms import CommentForms
 from django.template.context_processors import csrf
-from article.function import b_replacer, keys_33, b_replacer_33,eng_capitalize, first_capitalize
+from article.function import b_replacer, keys_33, b_replacer_33,eng_capitalize, first_capitalize, set_group, req_voc
 
+def main_view_claster (request):
+    if request.POST:
+        set_keys = request.POST.get('set_keys', '')
+        keys_keys = request.POST.get('keys_keys', '')
+        chast_keys = request.POST.get('chast_keys','')
+        nclik = request.POST.get('nclik','')
+        group_key = request.POST.get('group_key','')
+        res = set_group (set_keys,keys_keys, nclik)
 
+        done_keys_keys = res [0]
+        group_key = res [1]
+        chast_keys = req_voc (set_keys)
+
+    else:
+        set_keys = ''
+        keys_keys = ''
+        done_keys_keys = ''
+        chast_keys =''
+        nclik =''
+        group_key =''
+
+    return render_to_response('claster.html',
+                              {'set_keys':set_keys,'keys_keys':keys_keys,
+                               'done_keys_keys':done_keys_keys, 'chast_keys':chast_keys,
+                               'nclik':nclik,'group_key':group_key})
 # Create your views here.
 def main_view(request):
     view = "main_view"

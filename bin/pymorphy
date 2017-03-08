@@ -1,0 +1,4 @@
+#!/Users/firstovaleksej/djangoenv/bin/python3.4
+import sys
+from pymorphy2 import cli
+sys.exit(cli.main())
